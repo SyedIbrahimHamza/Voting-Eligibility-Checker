@@ -5,3 +5,8 @@ print("3. View voter details")
 print("4. View all registered voters")
 print("5. Voting Requirements")
 print("6. Exit")
+choice = input("Please select an option (1-6): ")
+while choice not in ['1', '2', '3', '4', '5', '6']:
+    print("Invalid choice. Please select a valid option (1-6).")
+    choice = input("Please select an option (1-6): ")
+    
