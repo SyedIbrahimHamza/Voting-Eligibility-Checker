@@ -1,0 +1,7 @@
+print("Welcome to Voter Eligibility Checker!")
+print("1. Register to vote")
+print("2. Check voter eligibility")
+print("3. View voter details")
+print("4. View all registered voters")
+print("5. Voting Requirements")
+print("6. Exit")
