@@ -1,3 +1,22 @@
+def register_voter():
+    print("You have selected to register to vote.")
+
+    name = input("Please enter your full name: ")
+    age = int(input("Please enter your age: "))
+
+    if age >= 18:
+        print("You are eligible to register.")
+        cnic = input("Please enter your CNIC: ")
+
+        print("\nRegistration Successful!")
+        print("Name:", name)
+        print("Age:", age)
+        print("CNIC:", cnic)
+
+    else:
+        print("Sorry, you are not eligible to register.")
+        print("You must be 18 or older.")
+
 print("Welcome to Voter Eligibility Checker!")
 print("1. Register to vote")
 print("2. Check voter eligibility")
