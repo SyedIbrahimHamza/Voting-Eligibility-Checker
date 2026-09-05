@@ -30,4 +30,5 @@ while choice not in ['1', '2', '3', '4', '5', '6']:
     choice = input("Please select an option (1-6): ")
 if choice == '1':
     register_voter()
-    
+elif choice == '2':
+    print("You have selected to check voter eligibility.")
