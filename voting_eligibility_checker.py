@@ -32,3 +32,5 @@ if choice == '1':
     register_voter()
 elif choice == '2':
     print("You have selected to check voter eligibility.")
+elif choice == '4':
+    print("You have selected to view all registered voters.")
