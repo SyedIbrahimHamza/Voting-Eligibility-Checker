@@ -34,3 +34,9 @@ elif choice == '2':
     print("You have selected to check voter eligibility.")
 elif choice == '4':
     print("You have selected to view all registered voters.")
+elif choice == '5':
+    print("You have selected to view voting requirements.")
+    print("To be eligible to vote, you must:")
+    print("- Be a citizen of the country")
+    print("- Be at least 18 years old")
+    print("- Register to vote before the election")
