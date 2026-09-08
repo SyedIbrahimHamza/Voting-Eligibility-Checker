@@ -40,3 +40,5 @@ elif choice == '5':
     print("- Be a citizen of the country")
     print("- Be at least 18 years old")
     print("- Register to vote before the election")
+elif choice == '6':
+    print("Exiting the program. Thank you for using the Voter Eligibility Checker!")
