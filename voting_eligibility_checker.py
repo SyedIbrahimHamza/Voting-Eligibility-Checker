@@ -32,6 +32,15 @@ if choice == '1':
     register_voter()
 elif choice == '2':
     print("You have selected to check voter eligibility.")
+
+    age = int(input("Please enter your age: "))
+
+    if age >= 18:
+        print("You are eligible to vote.")
+    else:
+        print("Sorry, you are not eligible to vote.")
+        print("You must be 18 or older.")
+
 elif choice == '4':
     print("You have selected to view all registered voters.")
 elif choice == '5':
