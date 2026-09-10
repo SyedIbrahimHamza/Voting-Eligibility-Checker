@@ -101,31 +101,28 @@ def view_all_registered_voters():
         print("Age:", voter["age"])
         print("CNIC:", voter["cnic"])
 
-
-print("Welcome to Voter Eligibility Checker!")
-print("1. Register to vote")
-print("2. Check voter eligibility")
-print("3. View voter details")
-print("4. View all registered voters")
-print("5. Voting Requirements")
-print("6. Exit")
-choice = input("Please select an option (1-6): ")
-while choice not in ['1', '2', '3', '4', '5', '6']:
-    print("Invalid choice. Please select a valid option (1-6).")
+while True:
+    print("Welcome to Voter Eligibility Checker!")
+    print("1. Register to vote")
+    print("2. Check voter eligibility")
+    print("3. View voter details")
+    print("4. View all registered voters")
+    print("5. Voting Requirements")
+    print("6. Exit")
     choice = input("Please select an option (1-6): ")
-if choice == '1':
-    register_voter()
-elif choice == '2':
-    get_valid_cnic()
-
-elif choice == '3':
-    view_voter_details()
-
-
-elif choice == '4':
-    view_all_registered_voters()
-
-elif choice == '5':
-    show_voting_requirements()
-elif choice == '6':
-    print("Exiting the program. Thank you for using the Voter Eligibility Checker!")
+    while choice not in ['1', '2', '3', '4', '5', '6']:
+        print("Invalid choice. Please select a valid option (1-6).")
+        choice = input("Please select an option (1-6): ")
+    if choice == '1':
+        register_voter()
+    elif choice == '2':
+        get_valid_cnic()
+    elif choice == '3':
+        view_voter_details()
+    elif choice == '4':
+        view_all_registered_voters()
+    elif choice == '5':
+        show_voting_requirements()
+    elif choice == '6':
+        print("Exiting the program. Thank you for using the Voter Eligibility Checker!")
+        break
