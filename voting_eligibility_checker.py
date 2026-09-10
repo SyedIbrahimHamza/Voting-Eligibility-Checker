@@ -33,6 +33,20 @@ def register_voter():
     else:
         print("Sorry, you are not eligible to register.")
         print("You must be 18 or older.")
+def view_all_registered_voters():
+    print("You have selected to view all registered voters.")
+
+    if not voters:
+        print("No registered voters found.")
+        return
+
+    print("\nAll Registered Voters:")
+
+    for number, voter in enumerate(voters, start=1):
+        print(f"\nVoter {number}")
+        print("Name:", voter["name"])
+        print("Age:", voter["age"])
+        print("CNIC:", voter["cnic"])
 
 
 print("Welcome to Voter Eligibility Checker!")
@@ -60,7 +74,8 @@ elif choice == '2':
         print("You must be 18 or older.")
 
 elif choice == '4':
-    print("You have selected to view all registered voters.")
+    view_all_registered_voters()
+
 elif choice == '5':
     print("You have selected to view voting requirements.")
     print("To be eligible to vote, you must:")
