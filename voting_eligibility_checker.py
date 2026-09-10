@@ -33,6 +33,25 @@ def register_voter():
     else:
         print("Sorry, you are not eligible to register.")
         print("You must be 18 or older.")
+def view_voter_details():
+    print("You have selected to view voter details.")
+
+    if not voters:
+        print("No registered voters found.")
+        return
+
+    cnic = input("Please enter the CNIC of the voter: ")
+
+    for voter in voters:
+        if voter["cnic"] == cnic:
+            print("\nVoter Details")
+            print("Name:", voter["name"])
+            print("Age:", voter["age"])
+            print("CNIC:", voter["cnic"])
+            return
+
+    print("No voter found with this CNIC.")
+
 def view_all_registered_voters():
     print("You have selected to view all registered voters.")
 
@@ -72,6 +91,10 @@ elif choice == '2':
     else:
         print("Sorry, you are not eligible to vote.")
         print("You must be 18 or older.")
+
+elif choice == '3':
+    view_voter_details()
+
 
 elif choice == '4':
     view_all_registered_voters()
