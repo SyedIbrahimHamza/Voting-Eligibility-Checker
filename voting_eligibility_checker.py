@@ -1,3 +1,4 @@
+voters = []
 def get_valid_age():
     while True:
         try:
@@ -10,11 +11,19 @@ def register_voter():
     print("You have selected to register to vote.")
 
     name = input("Please enter your full name: ")
-    age = int(input("Please enter your age: "))
+    age = get_valid_age()
 
     if age >= 18:
         print("You are eligible to register.")
         cnic = input("Please enter your CNIC: ")
+
+        voter = {
+            "name": name,
+            "age": age,
+            "cnic": cnic
+        }
+
+        voters.append(voter)
 
         print("\nRegistration Successful!")
         print("Name:", name)
@@ -24,6 +33,7 @@ def register_voter():
     else:
         print("Sorry, you are not eligible to register.")
         print("You must be 18 or older.")
+
 
 print("Welcome to Voter Eligibility Checker!")
 print("1. Register to vote")
