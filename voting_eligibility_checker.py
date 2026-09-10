@@ -15,7 +15,7 @@ def register_voter():
 
     if age >= 18:
         print("You are eligible to register.")
-        cnic = input("Please enter your CNIC: ")
+        cnic = get_valid_cnic()
 
         voter = {
             "name": name,
@@ -43,6 +43,22 @@ def check_voter_eligibility():
     else:
         print("Sorry, you are not eligible to vote.")
         print("You must be 18 or older.")
+def get_valid_cnic():
+    while True:
+        cnic = input("Please enter your CNIC: ")
+
+        if (
+            len(cnic) == 15
+            and cnic[5] == '-'
+            and cnic[13] == '-'
+            and cnic[:5].isdigit()
+            and cnic[6:13].isdigit()
+            and cnic[14].isdigit()
+        ):
+            return cnic
+
+        print("Invalid CNIC. Please use the format XXXXX-XXXXXXX-X.")
+
 
 def view_voter_details():
     print("You have selected to view voter details.")
@@ -100,15 +116,7 @@ while choice not in ['1', '2', '3', '4', '5', '6']:
 if choice == '1':
     register_voter()
 elif choice == '2':
-    print("You have selected to check voter eligibility.")
-
-    age = int(input("Please enter your age: "))
-
-    if age >= 18:
-        print("You are eligible to vote.")
-    else:
-        print("Sorry, you are not eligible to vote.")
-        print("You must be 18 or older.")
+    get_valid_cnic()
 
 elif choice == '3':
     view_voter_details()
@@ -118,10 +126,6 @@ elif choice == '4':
     view_all_registered_voters()
 
 elif choice == '5':
-    print("You have selected to view voting requirements.")
-    print("To be eligible to vote, you must:")
-    print("- Be a citizen of the country")
-    print("- Be at least 18 years old")
-    print("- Register to vote before the election")
+    show_voting_requirements()
 elif choice == '6':
     print("Exiting the program. Thank you for using the Voter Eligibility Checker!")
