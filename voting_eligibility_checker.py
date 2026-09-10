@@ -33,6 +33,17 @@ def register_voter():
     else:
         print("Sorry, you are not eligible to register.")
         print("You must be 18 or older.")
+def check_voter_eligibility():
+    print("You have selected to check voter eligibility.")
+
+    age = get_valid_age()
+
+    if age >= 18:
+        print("You are eligible to vote.")
+    else:
+        print("Sorry, you are not eligible to vote.")
+        print("You must be 18 or older.")
+
 def view_voter_details():
     print("You have selected to view voter details.")
 
@@ -51,6 +62,13 @@ def view_voter_details():
             return
 
     print("No voter found with this CNIC.")
+def show_voting_requirements():
+    print("You have selected to view voting requirements.")
+    print("To be eligible to vote, you must:")
+    print("- Be a citizen of the country")
+    print("- Be at least 18 years old")
+    print("- Register to vote before the election")
+
 
 def view_all_registered_voters():
     print("You have selected to view all registered voters.")
