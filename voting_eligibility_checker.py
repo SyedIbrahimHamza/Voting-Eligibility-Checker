@@ -1,3 +1,11 @@
+def get_valid_age():
+    while True:
+        try:
+            age = int(input("Please enter your age: "))
+            return age
+        except ValueError:
+            print("Invalid age. Please enter a valid number.")
+
 def register_voter():
     print("You have selected to register to vote.")
 
